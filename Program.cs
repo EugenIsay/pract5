@@ -18,16 +18,19 @@ class Programm
         Console.WriteLine("Введите потребление бака л/ч км");
         read.read_show(out float P);
         Console.WriteLine("Введите максимальную скорость машины");
+    speed:
         read.read_show(out float S);
+        if (read.check_speed(S, key.Key.ToString()) == false)
+            goto speed;
         switch (key.Key.ToString())
         {
             case "B":
                 Console.WriteLine("Количество пассажиров");
-                read.read_show(out float People);
+                read.read_show_without_dot(out float People);
                 bus.Info(V, P, S, People);
                 break;    
             case "T":
-                Console.WriteLine("Массу перевозимого груза");
+                Console.WriteLine("Массу перевозимого груза в кг");
                 read.read_show(out float Kg);
                 truck.Info(V, P, S, Kg);
                 break;

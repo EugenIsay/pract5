@@ -71,10 +71,10 @@ namespace Avto_Gruz
             amount = 0;
             Console.WriteLine($"Пройдено за этот раз {Math.Round(temp0, 2)}");
             Show();
-            Console.WriteLine($"Время в этом пути {Math.Round(time, 2)}");
+            Console.WriteLine($"Время в пути {Math.Floor(time)} часов {Math.Round((Math.Round(time, 2) - Math.Floor(time)) * 60)} минуты");
             Console.WriteLine("Топливо закончилось. Хотите заправить? Y/N");
+        input:
             key = Console.ReadKey(true);
-            input:
             switch (key.Key.ToString())
             {
                 case "Y":
@@ -110,7 +110,6 @@ namespace Avto_Gruz
             Console.WriteLine($"Пройдено всего {Math.Round(allrunway, 2)}");
             Console.WriteLine($"Осталось топлива {Math.Round(amount, 2)}");
             Console.WriteLine($"Время в пути {Math.Floor(alltime)} часов {Math.Round((Math.Round(alltime, 2) - Math.Floor(alltime)) * 60)} минуты");
-            Console.WriteLine($"Время в этом пути {Math.Round(alltime, 2)}");
         }
     }
 }
