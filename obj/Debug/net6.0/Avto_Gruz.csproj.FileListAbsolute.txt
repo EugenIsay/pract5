@@ -1,0 +1,15 @@
+C:\Users\prdb\Desktop\IsayProjects\Avto_Gruz\bin\Debug\net6.0\Avto_Gruz.exe
+C:\Users\prdb\Desktop\IsayProjects\Avto_Gruz\bin\Debug\net6.0\Avto_Gruz.deps.json
+C:\Users\prdb\Desktop\IsayProjects\Avto_Gruz\bin\Debug\net6.0\Avto_Gruz.runtimeconfig.json
+C:\Users\prdb\Desktop\IsayProjects\Avto_Gruz\bin\Debug\net6.0\Avto_Gruz.dll
+C:\Users\prdb\Desktop\IsayProjects\Avto_Gruz\bin\Debug\net6.0\Avto_Gruz.pdb
+C:\Users\prdb\Desktop\IsayProjects\Avto_Gruz\obj\Debug\net6.0\Avto_Gruz.csproj.AssemblyReference.cache
+C:\Users\prdb\Desktop\IsayProjects\Avto_Gruz\obj\Debug\net6.0\Avto_Gruz.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\prdb\Desktop\IsayProjects\Avto_Gruz\obj\Debug\net6.0\Avto_Gruz.AssemblyInfoInputs.cache
+C:\Users\prdb\Desktop\IsayProjects\Avto_Gruz\obj\Debug\net6.0\Avto_Gruz.AssemblyInfo.cs
+C:\Users\prdb\Desktop\IsayProjects\Avto_Gruz\obj\Debug\net6.0\Avto_Gruz.csproj.CoreCompileInputs.cache
+C:\Users\prdb\Desktop\IsayProjects\Avto_Gruz\obj\Debug\net6.0\Avto_Gruz.dll
+C:\Users\prdb\Desktop\IsayProjects\Avto_Gruz\obj\Debug\net6.0\refint\Avto_Gruz.dll
+C:\Users\prdb\Desktop\IsayProjects\Avto_Gruz\obj\Debug\net6.0\Avto_Gruz.pdb
+C:\Users\prdb\Desktop\IsayProjects\Avto_Gruz\obj\Debug\net6.0\Avto_Gruz.genruntimeconfig.cache
+C:\Users\prdb\Desktop\IsayProjects\Avto_Gruz\obj\Debug\net6.0\ref\Avto_Gruz.dll
