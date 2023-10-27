@@ -10,7 +10,6 @@ namespace Avto_Gruz
     {
         ConsoleKeyInfo key;
         private string read;
-        private int ch;
         private bool dot;
         public void read_show(out float arg0)
         {
@@ -130,12 +129,6 @@ namespace Avto_Gruz
             else if (transport == "T" && arg0 < 90 && arg0 > 30) { return true; }
             else { Console.WriteLine("Неправильная скорость. Введите заново"); return false; }
         }
-        //public bool check_consuption(float arg0, string transport)
-        //{
-        //    if (transport == "B" && arg0 < 34.8f && arg0 > 10.2f) return true;
-        //    else if (transport == "T" && arg0 < 50.2f && arg0 > 18) { return true; }
-        //    else { Console.WriteLine("Неправильная потребление. Введите заново"); return false; }
-        //}
     }
 }
 

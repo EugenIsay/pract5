@@ -9,15 +9,15 @@ class Programm
         Input read = new Input();
         ConsoleKeyInfo key;
     start:
-        Console.WriteLine("Выберите транспортное средство");
+        Console.WriteLine("Выберите транспортное средство B - автобус, T - грузовик");
         key = Console.ReadKey(true);
         if (key.Key.ToString() != "B" && key.Key.ToString() != "T")
             goto start;
         Console.WriteLine("Введите объём бака");
-        read.read_show(out float V);
-        Console.WriteLine("Введите потребление бака л/ч км");
+        read.read_show_without_dot(out float V);
+        Console.WriteLine("Введите потребление бака л/ч");
         read.read_show(out float P);
-        Console.WriteLine("Введите максимальную скорость машины");
+        Console.WriteLine("Введите максимальную скорость машины км/ч");
     speed:
         read.read_show(out float S);
         if (read.check_speed(S, key.Key.ToString()) == false)
