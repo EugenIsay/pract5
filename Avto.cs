@@ -65,8 +65,7 @@ namespace Avto_Gruz
         {
             distance -= Acceleration_Distance(weight);
             time = distance / speed;
-            temp0 = time * consumption;
-            result = amount - (temp0 + Acceleration_Time(weight) * consumption);
+            result = amount - consumption * (time + Acceleration_Time(weight));
             return result;
         }
         protected void Not_enough_fuel(float distance)

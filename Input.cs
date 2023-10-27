@@ -64,7 +64,7 @@ namespace Avto_Gruz
                         {
                             if (read.Substring(read.Length - 1) == ",")
                                 dot = false;
-                            read = read.Remove(0, 1);
+                            read = read.Remove(read.Length - 1, 1);
                             Console.SetCursorPosition(Console.CursorLeft - 1, Console.CursorTop);
                             Console.Write(" ");
                             Console.SetCursorPosition(Console.CursorLeft - 1, Console.CursorTop);
@@ -110,10 +110,11 @@ namespace Avto_Gruz
                     case "Backspace":
                         if (read.Length > 0)
                         {
-                            read = read.Remove(0, 1);
+                            read = read.Remove(read.Length - 1, 1);
                             Console.SetCursorPosition(Console.CursorLeft - 1, Console.CursorTop);
                             Console.Write(" ");
                             Console.SetCursorPosition(Console.CursorLeft - 1, Console.CursorTop);
+                            Console.WriteLine($" {read} ");
                         }
                         break;
                     default:
