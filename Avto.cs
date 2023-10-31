@@ -21,11 +21,12 @@ namespace Avto_Gruz
         protected float weight;
         protected float temp0;
         protected float result;
+        protected float way;
         public virtual void Info( float capacity, float consumption, float speed, float weight)
         {
             this.capacity = capacity;
             amount = capacity;
-            this.consumption = consumption;
+            this.consumption = consumption / 100;
             this.speed = speed;
         }
         protected void Refueling(float amount)
@@ -45,15 +46,17 @@ namespace Avto_Gruz
         {
             Console.WriteLine(" ");
             Console.WriteLine($"Надо проехать {Math.Round(distance + runway, 2)}");
-            if (Consumption(distance) < 0)
+            if (Distance_pass(distance) < 0)
             {
                 Not_enough_fuel(distance);
             }
             else
             {
-                amount = Consumption(distance);
                 runway = 0;
-                time += Acceleration_Time(weight);
+                distance -= Acceleration_Distance(weight);
+                time = distance / speed + Acceleration_Time(weight);
+                distance += Acceleration_Distance(weight);
+                amount -= distance * consumption;
                 alltime += time;
                 allrunway += distance;
                 Console.WriteLine($"Пройдено за этот раз {Math.Round(distance, 2)}");
@@ -61,23 +64,23 @@ namespace Avto_Gruz
                 time = 0;
             }
         }
-        protected float Consumption(float distance)
+        protected float Distance_pass(float distance)
         {
             distance -= Acceleration_Distance(weight);
-            time = distance / speed;
-            result = amount - consumption * (time + Acceleration_Time(weight));
+            way = (amount - (Acceleration_Distance(weight) * consumption)) / consumption;
+            result = way - distance;
             return result;
         }
         protected void Not_enough_fuel(float distance)
         {
-            time = (amount - Acceleration_Time(weight) * consumption) / consumption;
-            temp0 = Acceleration_Distance(weight) + time * speed;
-            time += Acceleration_Time(weight);
-            runway += temp0;
-            allrunway += temp0;
-            distance -= temp0;
+            time = way / speed + Acceleration_Time(weight);
+            way = Acceleration_Distance(weight) + time * speed;
+            runway += way;
+            alltime += time;
+            allrunway += way;
+            distance -= way;
             amount = 0;
-            Console.WriteLine($"Пройдено за этот раз {Math.Round(temp0, 2)}");
+            Console.WriteLine($"Пройдено за этот раз {Math.Round(way, 2)}");
             Show();
             Console.WriteLine("Топливо закончилось. Хотите заправить? Y/N");
         input:

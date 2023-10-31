@@ -114,7 +114,6 @@ namespace Avto_Gruz
                             Console.SetCursorPosition(Console.CursorLeft - 1, Console.CursorTop);
                             Console.Write(" ");
                             Console.SetCursorPosition(Console.CursorLeft - 1, Console.CursorTop);
-                            Console.WriteLine($" {read} ");
                         }
                         break;
                     default:

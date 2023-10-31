@@ -15,7 +15,7 @@ class Programm
             goto start;
         Console.WriteLine("Введите объём бака");
         read.read_show_without_dot(out float V);
-        Console.WriteLine("Введите потребление бака л/ч");
+        Console.WriteLine("Введите потребление бака л/100 км");
         read.read_show(out float P);
         Console.WriteLine("Введите максимальную скорость машины км/ч");
     speed:
