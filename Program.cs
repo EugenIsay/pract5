@@ -39,14 +39,18 @@ class Programm
         {
             if (key.Key.ToString() == "B")
             {
-                bus.Move(rnd.Next(1, 200));
+                bus.Input_Distance(rnd.Next(1, 200));
             }
             else if (key.Key.ToString() == "T")
             {
-                truck.Move(rnd.Next(1, 200));
+                truck.Input_Distance(rnd.Next(1, 200));
             }
             else break;
-
+            if (bus.restart == true || truck.restart == true)
+            {
+                bus.restart = false; truck.restart = false;
+                goto start;
+            }
             Console.WriteLine("Нажмите на любую кнопку чтобы продолжить");
             Console.ReadKey();
         }

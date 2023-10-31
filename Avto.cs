@@ -22,12 +22,17 @@ namespace Avto_Gruz
         protected float temp0;
         protected float result;
         protected float way;
+        public bool restart = false;
         public virtual void Info( float capacity, float consumption, float speed, float weight)
         {
             this.capacity = capacity;
             amount = capacity;
             this.consumption = consumption / 100;
             this.speed = speed;
+        }
+        public void Input_Distance(float distance)
+        {
+            Move(distance);
         }
         protected void Refueling(float amount)
         {
@@ -42,7 +47,7 @@ namespace Avto_Gruz
                 Refueling(A);
             }
         }
-        public void Move(float distance)
+        protected void Move(float distance)
         {
             Console.WriteLine(" ");
             Console.WriteLine($"Надо проехать {Math.Round(distance + runway, 2)}");
@@ -53,9 +58,7 @@ namespace Avto_Gruz
             else
             {
                 runway = 0;
-                distance -= Acceleration_Distance(weight);
-                time = distance / speed + Acceleration_Time(weight);
-                distance += Acceleration_Distance(weight);
+                time = (distance - Acceleration_Distance(weight)) / speed + Acceleration_Time(weight);
                 amount -= distance * consumption;
                 alltime += time;
                 allrunway += distance;
@@ -94,7 +97,17 @@ namespace Avto_Gruz
                     Move(distance);
                     break;
                 case "N":
-                    Environment.Exit(0);
+                    Console.WriteLine("Вы хотите выйти или начать заново? E - выйти, R - начать заново");
+                    key = Console.ReadKey(true);
+                    switch (key.Key.ToString())
+                    {
+                        case "E":
+                            Environment.Exit(0);
+                            break;
+                        case "R":
+                            restart = true;
+                            break;
+                    }
                     break;
                 default:
                     goto input;
